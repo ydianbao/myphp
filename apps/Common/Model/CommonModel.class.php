@@ -16,7 +16,7 @@ use Think\Model;
 abstract class CommonModel extends Model {
     protected $_auto = array(
         array('create_time', 'time', self::MODEL_INSERT, 'function'),
-        array('update_time', 'time', self::MODEL_UPDATE, 'function'),
+        array('update_time', 'time', self::MODEL_BOTH, 'function'),
     );
     /**
      * easyui分页处理
