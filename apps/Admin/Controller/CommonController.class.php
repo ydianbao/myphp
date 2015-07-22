@@ -145,4 +145,25 @@ class CommonController extends PublicController {
             $this->error(L('DELETE') . L('ERROR'));
         }
     }
+
+    //编辑状态
+    public function lock() {
+        $params = I('post.');
+        if($params['item_id']) {
+            $where = array();
+            $pk = $this->dbModel->getPk();
+            if(strpos($item_id, ',') !== false) {
+                $where[$pk] = array('IN', $item_id);
+            }else {
+                $where[$pk] = $item_id;
+            }
+            $this->dbModel->create(array('locked' => (int)$params['locked']));
+            $result = $this->dbModel->where($where)->save();
+            if($result) {
+                $this->success(L('EDIT').L('SUCCESS'));
+            }else
+                $this->error(L('EDIT').L('ERROR'));
+        }
+        $this->error(L('SELECT_NODE'));
+    }
 }

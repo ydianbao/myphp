@@ -50,7 +50,7 @@ abstract class CommonModel extends Model {
      */
     public function getAll() {
         $rows = $this->select();
-        format_time($rows);
+        formatTime($rows);
         return $rows;
     }
 

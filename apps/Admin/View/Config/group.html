@@ -22,7 +22,7 @@
                             </case>
                             <case value="5">
                                 <select name="config[{$config.name}]" class="easyui-combobox" style="min-width: 100px;">
-                                    <volist name=":parse_config_attr($config['extra'])" id="vo">
+                                    <volist name=":parseConfigAttr($config['extra'])" id="vo">
                                         <option value="{$key}" <eq name="config.value" value="$key">selected</eq>>{$vo}</option>
                                     </volist>
                                 </select>

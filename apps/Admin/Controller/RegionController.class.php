@@ -28,9 +28,9 @@ class RegionController extends CommonController {
     }
 
     public function _before_delete() {
-        $item_id = I('request.item_id');
-        if(empty($item_id)) return;
-        $this->region = $this->dbModel->find($item_id);
+        $itemId = I('request.item_id');
+        if(empty($itemId)) return;
+        $this->region = $this->dbModel->find($itemId);
     }
 
     public function _after_delete() {

@@ -4,7 +4,7 @@
  * 获取当前完整路径
  * @return string
  */
-function location_href() {
+function locationHref() {
     $url = (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443') ? 'https://' : 'http://';
     $url .= $_SERVER['HTTP_HOST'];
     if($_SERVER['SERVER_PORT'] != '80') {
@@ -19,7 +19,7 @@ function location_href() {
  * @param $string
  * @return array
  */
-function parse_config_attr($string) {
+function parseConfigAttr($string) {
     $array = preg_split('/[,;\r\n]+/', trim($string, ",;\r\n"));
     if(strpos($string,':')){
         $value  =   array();
@@ -38,12 +38,12 @@ function parse_config_attr($string) {
  * @param $data
  * @param string $format
  */
-function format_time(& $data, $format = 'Y-m-d H:i:s') {
+function formatTime(& $data, $format = 'Y-m-d H:i:s') {
     if(empty($data)) return false;
     $format = empty($format) ? C('DATE_FORMAT') : $format;
     foreach($data as $key => $item){
         if(is_array($item)){
-            format_time($data[$key], $format);
+            formatTime($data[$key], $format);
         }else{
             if(strpos($key, 'time')){
                 $data[$key] = $item > 0 ? date($format, $item) : null;
@@ -56,7 +56,7 @@ function format_time(& $data, $format = 'Y-m-d H:i:s') {
  * 验证手机端访问
  * @return bool
  */
-function mobile_browser() {
+function wapBrowser() {
     // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
     if (isset ($_SERVER['HTTP_X_WAP_PROFILE']))  return true;
     // 如果via信息含有wap则一定是移动设备,部分服务商会屏蔽该信息

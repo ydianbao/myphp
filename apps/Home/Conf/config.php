@@ -7,8 +7,8 @@ return array(
     'DEFAULT_LANG'              => 'zh-cn', // 允许切换的语言列表 用逗号分隔
 
     'VIEW_PATH'                 => './template/',
-    'DEFAULT_THEME'             => 'web',
-    'THEME_LIST'                => 'web,mobile',
-    'TMPL_ACTION_ERROR'         => 'public:message',
-    'TMPL_ACTION_SUCCESS'       => 'public:message',
+    'DEFAULT_THEME'             => 'pc',
+    'THEME_LIST'                => 'pc,mobile',
+    'TMPL_ACTION_ERROR'         => 'Public:message',
+    'TMPL_ACTION_SUCCESS'       => 'Public:message',
 );

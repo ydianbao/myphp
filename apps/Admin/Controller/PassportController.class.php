@@ -55,7 +55,7 @@ class PassportController extends PublicController {
 
         //更新登录信息
         $adminModel->data($update)->where("user_id = %d", intval($data['user_id']))->save();
-        $adminModel->AddLog(L('have_login'), $data['user_id']);
+        $adminModel->addLog(L('have_login'), $data['user_id']);
         $this->success();
     }
 
